@@ -1,6 +1,6 @@
-﻿namespace DVLD_PresentationLayer
+﻿namespace DVLD_PresentationLayer.Dashboard
 {
-    partial class Form1
+    partial class frmDashboard
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // frmDashboard
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(1272, 692);
+            this.Name = "frmDashboard";
+            this.Text = "DashboardForm";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
     }
 }
-

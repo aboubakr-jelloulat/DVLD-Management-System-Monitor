@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DVLD_Business;
+using DVLD_PresentationLayer.Dashboard;
+using DVLD_PresentationLayer.Global;
+using DVLD_PresentationLayer.Notifications;
+using System;
+
 using System.Windows.Forms;
 
 namespace DVLD_PresentationLayer.Login
@@ -15,6 +13,60 @@ namespace DVLD_PresentationLayer.Login
         public frmLogin()
         {
             InitializeComponent();
+        }
+
+       
+
+
+
+        private void btnSubmet_Click(object sender, EventArgs e)
+        {
+            clsUser user = clsUser.FindByUsernameAndPassword(txtboxLoginUsername.Text.Trim(),
+                    txtboxLoginPassword.Text.Trim());
+
+            if (user != null)
+            {
+
+                if (chckRememberMe.Checked)
+                {
+                    //store username and password
+
+                    clsGlobal.RememberUsernameAndPassword(txtboxLoginUsername.Text.Trim(),
+                    txtboxLoginPassword.Text.Trim());
+                }
+                else
+                {
+                    //store empty username and password
+
+                    clsGlobal.RememberUsernameAndPassword("", "");
+                }
+
+                if (!user.IsActive)
+                {
+                    txtboxLoginUsername.Focus();
+                    clsMessageBoxHelper.ShowError("In Active Account", "Your accound is not Active, Contact Admin.");
+                    return ;
+                }
+
+
+                clsGlobal.CurrentUser = user;
+
+
+
+                frmDashboard frm = new frmDashboard();
+
+                frm.ShowDialog();
+
+
+
+            }
+            else
+            {
+                txtboxLoginUsername.Focus();
+                clsMessageBoxHelper.ShowError("Login Failed", "Invalid username or password.");
+
+            }
+
         }
     }
 }

@@ -1,11 +1,7 @@
 ﻿using DVLD_DataAccess.DataAccessSettings;
 using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace DVLD_DataAccess
 {
@@ -238,6 +234,93 @@ namespace DVLD_DataAccess
 
 
 
+        public static bool IsPersonExist(int PersonID)
+        {
+            bool IsFound = false;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.connstr);
+
+            string Query = "SELECT Found = 1 FROM People WHERE PersonID = @PersonID;";
+
+
+            SqlCommand command = new SqlCommand(Query, connection);
+
+            command.Parameters.AddWithValue("@PersonID", PersonID);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                IsFound = reader.HasRows;
+
+                /*
+                 * reader.HasRows is a boolean property (true or false).
+
+                    It returns:
+
+                        true → if there is at least one row in the result.
+
+                        false → if the result is empty (no rows).
+                */
+
+
+                reader.Close();
+
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("Person Data Error : " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+
+            return IsFound;
+        }
+
+
+
+        public static bool IsPersonExist(string NationalNo)
+        {
+            bool IsFound = false;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.connstr);
+
+            string Query = "SELECT Found = 1 FROM People WHERE NationalNo = @NationalNo;";
+
+
+            SqlCommand command = new SqlCommand(Query, connection);
+
+            command.Parameters.AddWithValue("@NationalNo", NationalNo);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                IsFound = reader.HasRows;
+
+
+                reader.Close();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Person Data Error : " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+
+            return IsFound;
+        }
 
     }
 

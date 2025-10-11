@@ -52,20 +52,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Dashboard\frmDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Dashboard\frmDashboard.Designer.cs">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form.Designer.cs">
+      <DependentUpon>form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\clsGlobal.cs" />
+    <Compile Include="Global\clsUtils.cs" />
     <Compile Include="Login\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Notifications\MessageBoxHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Dashboard\frmDashboard.resx">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form.resx">
+      <DependentUpon>form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>

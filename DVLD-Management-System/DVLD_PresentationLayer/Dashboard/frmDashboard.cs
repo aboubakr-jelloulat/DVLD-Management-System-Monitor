@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DVLD_PresentationLayer
+namespace DVLD_PresentationLayer.Dashboard
 {
-    public partial class Form1 : Form
+    public partial class frmDashboard : Form
     {
-        public Form1()
+        public frmDashboard()
         {
             InitializeComponent();
         }
