@@ -15,9 +15,15 @@ namespace DVLD_PresentationLayer.Login
             InitializeComponent();
         }
 
-       
 
 
+        private void _ShowDashboardForm()
+        {
+            frmDashboard frm = new frmDashboard();
+
+            frm.ShowDialog();
+
+        }
 
         private void btnSubmet_Click(object sender, EventArgs e)
         {
@@ -48,16 +54,9 @@ namespace DVLD_PresentationLayer.Login
                     return ;
                 }
 
-
                 clsGlobal.CurrentUser = user;
 
-
-
-                frmDashboard frm = new frmDashboard();
-
-                frm.ShowDialog();
-
-
+                _ShowDashboardForm();
 
             }
             else
@@ -70,3 +69,4 @@ namespace DVLD_PresentationLayer.Login
         }
     }
 }
+

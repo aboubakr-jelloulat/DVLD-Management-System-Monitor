@@ -101,6 +101,7 @@
             this.txtboxLoginPassword.PasswordChar = '*';
             this.txtboxLoginPassword.Size = new System.Drawing.Size(407, 50);
             this.txtboxLoginPassword.TabIndex = 2;
+            this.txtboxLoginPassword.Text = "1234";
             // 
             // txtboxLoginUsername
             // 
@@ -112,6 +113,7 @@
             this.txtboxLoginUsername.Name = "txtboxLoginUsername";
             this.txtboxLoginUsername.Size = new System.Drawing.Size(407, 47);
             this.txtboxLoginUsername.TabIndex = 1;
+            this.txtboxLoginUsername.Text = "user4";
             // 
             // label6
             // 

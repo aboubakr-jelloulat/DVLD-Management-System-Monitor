@@ -92,6 +92,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -119,6 +120,13 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\SignoutIcon.png" />
+    <None Include="Resources\UsersIcon.gif" />
+    <None Include="Resources\UsersIcons.gif" />
+    <None Include="Resources\People.png" />
+    <None Include="Resources\ApplicationIcons.png" />
+    <None Include="Resources\DriversIcon.png" />
+    <None Include="Resources\AccountSettingIcon.png" />
     <Content Include="Resources\LoginAnimitionGIF.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
